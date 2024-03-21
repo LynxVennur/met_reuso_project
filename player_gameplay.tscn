@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://3ixgvjxgivqe"]
+
+[ext_resource type="Script" path="res://scripts/player_controll.gd" id="1_ywlgu"]
+[ext_resource type="PackedScene" uid="uid://cspje78j3els2" path="res://scenes/ship_model.tscn" id="2_2vy8r"]
+
+[node name="player_gameplay" type="Node3D" node_paths=PackedStringArray("player_ship", "camera_controll", "camera_anchor")]
+script = ExtResource("1_ywlgu")
+player_ship = NodePath("")
+camera_controll = NodePath("")
+camera_anchor = NodePath("")
+
+[node name="player" parent="." instance=ExtResource("2_2vy8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="camera_anchor" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18108, -3.85344)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.998743, 1.8603e-09, 0.0501223, 0.0181238, 0.932336, 0.361138, -0.0467309, 0.361592, -0.931165, -0.130931, 1.36798, -4.6864)
+current = true
